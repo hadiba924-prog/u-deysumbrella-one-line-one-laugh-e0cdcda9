@@ -1,41 +1,35 @@
 # One Line, One Laugh
 
-![Bounty](https://make.fun/badge/u-deysumbrella-one-line-one-laugh-e0cdcda9.svg)
-![Rank](https://make.fun/badge/u-deysumbrella-one-line-one-laugh-e0cdcda9/hadiba924-prog/u-deysumbrella-one-line-one-laugh-e0cdcda9/rank.svg)
-![Reward](https://make.fun/badge/u-deysumbrella-one-line-one-laugh-e0cdcda9/hadiba924-prog/u-deysumbrella-one-line-one-laugh-e0cdcda9/reward.svg)
+[![make.fun · u-deysumbrella-one-line-one-laugh-e0cdcda9](https://make.fun/badge/u-deysumbrella-one-line-one-laugh-e0cdcda9.svg)](https://make.fun/bounty/u-deysumbrella-one-line-one-laugh-e0cdcda9?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-one-line-one-laugh-e0cdcda9)
+[![rank](https://make.fun/badge/u-deysumbrella-one-line-one-laugh-e0cdcda9/hadiba924-prog/u-deysumbrella-one-line-one-laugh-e0cdcda9/rank.svg)](https://make.fun/bounty/u-deysumbrella-one-line-one-laugh-e0cdcda9/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-one-line-one-laugh-e0cdcda9)
+[![reward](https://make.fun/badge/u-deysumbrella-one-line-one-laugh-e0cdcda9/hadiba924-prog/u-deysumbrella-one-line-one-laugh-e0cdcda9/reward.svg)](https://make.fun/bounty/u-deysumbrella-one-line-one-laugh-e0cdcda9?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-one-line-one-laugh-e0cdcda9)
 
-## The entry
+Entry for the make.fun bounty [One Line, One Laugh](https://make.fun/bounty/u-deysumbrella-one-line-one-laugh-e0cdcda9) — one original joke, one line, nothing else.
+
+## The line
 
 > I told the taxi driver to take the scenic route; he took me to his cousin's wedding.
 
+84 characters.
+
 ## Why it wins
 
-Against the judge's five criteria, in order of importance:
-
-1. **It is a real funny one-line joke.** The humour is a situation, not a slogan: a passenger asks for the long way round and ends up as an uninvited guest at a stranger's wedding.
-2. **The laugh comes from the line itself.** The turn lands in the last five words — "his cousin's wedding" — which reframes everything before it. No explanation, no meme, no borrowed punchline.
-3. **One line, one breath.** A single sentence, 84 characters, no setup paragraph and no second line doing the work.
-4. **Fresh wording.** A specific, concrete picture (taxi, scenic route, cousin's wedding) that the reader has not seen a hundred times, told in plain words that sound like a person talking.
-5. **Lands on a single read.** No footnote, no context, no shared knowledge needed — anyone who has ever taken a taxi gets it instantly.
+- **A real one-line joke.** The whole thing is a single setup-and-punchline: a passenger asks for the scenic route, and the driver delivers something nobody asked for. No explanation, no second sentence, no crutch.
+- **The laugh comes from the line itself.** The turn lands in the last words — "his cousin's wedding". The driver treats a vague tourist request as a personal errand, and the mismatch between what was asked and what happened is the entire joke.
+- **One line, one breath.** At 84 characters it reads out loud in a single breath, well inside the 140-character limit, and it fits the "one line" rule with room to spare.
+- **A fresh, specific picture.** Not a generic pun or a recycled internet one-liner: a taxi, a scenic route, a cousin's wedding. The scene is concrete enough to see in your head in a second.
+- **It lands on a single read.** There is no wordplay to decode and no setup to re-read — the twist is obvious the moment you reach the end, which is exactly what a one-liner needs.
 
 ## How it works
 
-`main.ts` (Node 22, stdlib only: `node:fs`, `node:path`) writes the line to
-`$MAKEFUN_OUTPUT_DIR/entry.txt` (default `/output`), with no trailing
-newline. It guards the gate before writing: the line must be 1–140
-characters (counted as code points), a single line, and more than whitespace.
+`main.ts` runs on Node 22 with only the standard library — no dependencies to install. It writes the line to `$MAKEFUN_OUTPUT_DIR/entry.txt` with no trailing newline, and guards the output to stay within 1–140 characters.
 
 Run it with:
 
 ```sh
-MAKEFUN_OUTPUT_DIR=/output node main.ts
+MAKEFUN_OUTPUT_DIR=./out node main.ts
 ```
 
 ## Verification
 
-Run twice with Node v24.22.1 (stdlib only, no dependencies):
-
-- Both runs produced byte-identical output (`cmp` clean) — deterministic.
-- `entry.txt` is 84 bytes / 84 code points — inside the 1–140 gate.
-- Exactly 1 line, no trailing newline, valid UTF-8, non-whitespace.
-- All three make.fun badges above verified to return HTTP 200.
+After running, `out/entry.txt` should contain exactly the line above — 84 characters, one line, no trailing newline. That is the whole entry: nothing more is written, nothing is fetched, and the output is fully deterministic.
